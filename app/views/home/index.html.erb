@@ -1,0 +1,8 @@
+<h1>Home works yo</h1>
+
+<% if @images.any? %>
+  <% @images.each do |image| %>
+    <h1><%= image.caption %></h1>
+    <%= image_tag image.picture.url(:medium) %>
+  <% end %>
+<% end %>

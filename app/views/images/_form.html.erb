@@ -1,0 +1,13 @@
+<%= form_for @image do |f| %>
+
+  <p>
+    <%= f.label :caption %><br>
+    <%= f.text_field :caption %>
+  </p><br>
+  <p>
+    <%= f.file_field :picture %>
+  </p>
+  <p>
+    <%= f.submit "Upload Photo" %>
+  </p>
+<% end %>
