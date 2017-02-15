@@ -5,7 +5,9 @@
     <%= f.text_field :caption %>
   </p><br>
   <p>
-    <%= f.file_field :picture %>
+    <%= f.file_field :picture, :id => 'pictureInput' %>
+    <div id="target">
+    </div>
   </p>
   <p>
     <%= f.submit "Upload Photo" %>

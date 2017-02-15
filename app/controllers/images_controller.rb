@@ -3,10 +3,15 @@ class ImagesController < ApplicationController
     @image = Image.new
   end
 
+  def show
+    @image = Image.find(params[:id])
+    @owner = User.find(@image.owner_id)
+  end
+
   def create
     @image = Image.new( image_params )
+    @image.owner_id = current_user.id
     if @image.save
-      @image.owner_id = current_user.id
       flash[:notice] = "Your photo has been successfully uploaded!"
       redirect_to :controller => 'home'
     else

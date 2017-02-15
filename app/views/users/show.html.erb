@@ -1,0 +1,9 @@
+<h1>User Profile</h1>
+<h2><%= @user.username %></h2>
+<hr>
+<h2>Uploads</h2>
+<% @images.each do |image| %>
+  <%= link_to image_path(image) do %>
+    <%= image_tag image.picture.url(:medium) %>
+  <% end %>
+<% end %>
