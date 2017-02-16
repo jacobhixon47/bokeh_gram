@@ -1,7 +1,14 @@
 <% if @images.any? %>
+  <div class="grid">
+    <div class="grid-sizer">
+    </div>
     <% @images.each do |image| %>
       <%= link_to image_path(image) do %>
+        <div class="grid-item">
           <%= image_tag image.picture.url(:medium) %>
+        </div>
       <% end %>
     <% end %>
+
+  </div>
 <% end %>
