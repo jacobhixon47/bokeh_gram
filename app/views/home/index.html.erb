@@ -1,8 +1,7 @@
 <% if @images.any? %>
-  <% @images.each do |image| %>
-    <h1><%= image.caption %></h1>
-    <%= link_to image_path(image) do %>
-      <%= image_tag image.picture.url(:medium) %>
+    <% @images.each do |image| %>
+      <%= link_to image_path(image) do %>
+          <%= image_tag image.picture.url(:medium) %>
+      <% end %>
     <% end %>
-  <% end %>
 <% end %>
