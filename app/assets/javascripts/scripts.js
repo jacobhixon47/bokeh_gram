@@ -1,3 +1,11 @@
+$(document).ready(function() {
+  $(function() {
+    $('.grid').isotope({
+      itemSelector: '.grid-item'
+    });
+  });
+});
+
 $(document).on('turbolinks:load', function() {
   $(function() {
     $('#pictureInput').on('change', function(event) {
