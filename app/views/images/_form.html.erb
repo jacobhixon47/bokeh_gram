@@ -1,11 +1,11 @@
-<%= form_for @image do |f| %>
+<%= form_for [@user, @image] do |f| %>
 
   <p>
     <%= f.label :caption %><br>
     <%= f.text_field :caption %>
   </p><br>
   <p>
-    <%= f.file_field :picture, :id => 'pictureInput' %>
+    <%= f.file_field :picture, :id => 'pictureInput', :class => 'btn btn-info' %>
     <div id="target">
     </div>
   </p>

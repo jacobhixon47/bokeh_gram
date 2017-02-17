@@ -1,2 +1,16 @@
 <%= image_tag @image.picture.url(:medium) %>
 <h4><%= link_to @owner.username, user_path(@owner) %> | <%= @image.caption %></h4>
+
+<hr>
+<%= link_to "Post Comment", new_image_comment_path(@image) %>
+<h4>All Comments</h4>
+<% if @comments.any? %>
+  <% @comments.each do |comment| %>
+  <hr>
+    <p>
+      <% commentowner = User.find(comment.user_id) %>
+      <%= link_to commentowner.username, user_path(commentowner) %><br>
+      <%= comment.content %>
+    </p>
+  <% end %>
+<% end %>

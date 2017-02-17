@@ -2,6 +2,7 @@ class ImagesController < ApplicationController
   def show
     @image = Image.find(params[:id])
     @owner = User.find(@image.user_id)
+    @comments = @image.comments.all
   end
 
   def new
